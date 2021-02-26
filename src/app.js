@@ -9,15 +9,15 @@ let cardHeight = document.querySelector("#cardHeight");
 let cardWidth = document.querySelector("#cardWidth");
 let tenSecInterval;
 
-function generateCard() {
+function generateCard(initialHeight, initialWidth) {
   let randomCardNumber = Math.floor(Math.random() * 13) + 1;
   let randomCardIcon = Math.floor(Math.random() * 4);
   let topIcon = document.querySelector("#topIcon");
   let bottomIcon = document.querySelector("#bottomIcon");
   let cardNumber = document.querySelector("#cardNumber");
   let icons = ["♦", "♥", "♠", "♣"];
-  cardContainer.style.height = "550px";
-  cardContainer.style.width = "400px";
+  cardContainer.style.height = initialHeight;
+  cardContainer.style.width = initialWidth;
 
   //Assing the Top Icon and Bottom Icon character value
   topIcon.innerHTML = icons[randomCardIcon];
@@ -67,17 +67,17 @@ function generateCard() {
 
 window.onload = function() {
   //write your code here
-  generateCard();
+  generateCard("550px", "400px");
 };
 
 newCardButton.addEventListener("click", function() {
-  generateCard();
+  generateCard(cardHeight.value + "px", cardWidth.value + "px");
   clearInterval(tenSecInterval);
 });
 
 tenSecNewCard.addEventListener("click", function() {
   tenSecInterval = setInterval(function() {
-    generateCard();
+    generateCard(cardHeight.value + "px", cardWidth.value + "px");
   }, 10000);
 });
 
