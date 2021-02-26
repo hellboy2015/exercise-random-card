@@ -12,19 +12,45 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
-    <div class="container rounded bg-white mt-3">
-      <div class="row h-25">
-        <div class="col display-3 h1 my-auto" id="topIcon"></div>
+    <div class="container row pt-5 pl-5">
+      <div class="col-3 my-auto">
+        <div class="row mb-1">
+          <label class="mr-1" for="">Type height</label
+          ><input class="rounded" type="text" name="height" id="cardHeight" />
+        </div>
+        <div class="row mb-1">
+          <label class="mr-1" for="">Type width</label
+          ><input class="rounded" type="text" name="width" id="cardWidth" />
+        </div>
+        <div class="row mb-1">
+          <button type="button" class="btn btn-primary" id="newCardButton">
+            Generate New Card
+          </button>
+        </div>
+        <div class="row mb-1">
+          <button type="button" class="btn btn-primary" id="tenSecNewCard">
+            10 Sec Card Generator
+          </button>
+        </div>
       </div>
-      <div class="row h-50">
-        <div
-          class="col h1 display-1 h1 font-weight-bold text-center my-auto"
-          id="cardNumber"
-        ></div>
-      </div>
-      <div class="row h-25 float-right">
-        <div class="col display-3 h1 my-auto" id="bottomIcon"></div>
+
+      <div class="col">
+        <div class="container bg-white mt-3" id="cardContainer">
+          <div class="row h-25">
+            <div class="col display-3 h1 my-auto" id="topIcon"></div>
+          </div>
+          <div class="row h-50">
+            <div
+              class="col h1 display-1 h1 font-weight-bold text-center my-auto"
+              id="cardNumber"
+            ></div>
+          </div>
+          <div class="row h-25 float-right">
+            <div class="col display-3 h1 my-auto" id="bottomIcon"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

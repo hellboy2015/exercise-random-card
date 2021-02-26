@@ -2,17 +2,22 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let newCardButton = document.querySelector("#newCardButton");
+let tenSecNewCard = document.querySelector("#tenSecNewCard");
+let cardContainer = document.querySelector("#cardContainer");
+let cardHeight = document.querySelector("#cardHeight");
+let cardWidth = document.querySelector("#cardWidth");
+let tenSecInterval;
 
-window.onload = function() {
-  //write your code here
+function generateCard() {
   let randomCardNumber = Math.floor(Math.random() * 13) + 1;
   let randomCardIcon = Math.floor(Math.random() * 4);
   let topIcon = document.querySelector("#topIcon");
   let bottomIcon = document.querySelector("#bottomIcon");
   let cardNumber = document.querySelector("#cardNumber");
   let icons = ["♦", "♥", "♠", "♣"];
+  cardContainer.style.height = "550px";
+  cardContainer.style.width = "400px";
 
   //Assing the Top Icon and Bottom Icon character value
   topIcon.innerHTML = icons[randomCardIcon];
@@ -37,7 +42,7 @@ window.onload = function() {
       cardNumber.innerHTML = "J";
       break;
     case 1:
-      cardNumber.innerHTML = "♠";
+      cardNumber.innerHTML = icons[randomCardIcon];
       break;
     default:
       cardNumber.innerHTML = randomCardNumber;
@@ -53,5 +58,35 @@ window.onload = function() {
     topIcon.classList.add("text-danger");
     bottomIcon.classList.add("text-danger");
     cardNumber.classList.add("text-danger");
+  } else {
+    topIcon.classList.remove("text-danger");
+    bottomIcon.classList.remove("text-danger");
+    cardNumber.classList.remove("text-danger");
   }
+}
+
+window.onload = function() {
+  //write your code here
+  generateCard();
 };
+
+newCardButton.addEventListener("click", function() {
+  generateCard();
+  clearInterval(tenSecInterval);
+});
+
+tenSecNewCard.addEventListener("click", function() {
+  tenSecInterval = setInterval(function() {
+    generateCard();
+  }, 10000);
+});
+
+cardHeight.addEventListener("change", function() {
+  cardContainer.style.height = cardHeight.value + "px";
+  console.log(cardHeight.value);
+});
+
+cardWidth.addEventListener("change", function() {
+  cardContainer.style.width = cardWidth.value + "px";
+  console.log(cardWidth.value);
+});

@@ -2,9 +2,8 @@
 body {
   background-color: green;
 }
-.container {
-  height: 550px;
-  width: 400px;
+#cardContainer {
+  border-radius: 1rem;
 }
 
 #bottomIcon {
