@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>exercise-random-card</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -13,16 +13,18 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container rounded bg-white mt-3">
+      <div class="row h-25">
+        <div class="col display-3 h1 my-auto" id="topIcon"></div>
+      </div>
+      <div class="row h-50">
+        <div
+          class="col h1 display-1 h1 font-weight-bold text-center my-auto"
+          id="cardNumber"
+        ></div>
+      </div>
+      <div class="row h-25 float-right">
+        <div class="col display-3 h1 my-auto" id="bottomIcon"></div>
       </div>
     </div>
   </body>

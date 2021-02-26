@@ -1,1 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: green;
+}
+.container {
+  height: 550px;
+  width: 400px;
+}
+
+#bottomIcon {
+  transform: rotate(180deg);
+}
